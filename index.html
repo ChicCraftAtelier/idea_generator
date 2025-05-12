@@ -1,12 +1,3 @@
-<script>
-  const correctPassword = "password123";
-  const userInput = prompt("Enter access password:");
-  if (userInput !== correctPassword) {
-    alert("Access denied.");
-    document.body.innerHTML = "";
-  }
-</script>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +32,16 @@
       box-shadow: 0 0 10px #eed2cc;
     }
   </style>
+
+  <script>
+  const correctPassword = "password123";
+  const userInput = prompt("Enter access password:");
+  if (userInput !== correctPassword) {
+    alert("Access denied.");
+    document.body.innerHTML = "";
+  }
+</script>
+  
 </head>
 <body>
   <h1>🎁 Coupon Idea Generator</h1>
