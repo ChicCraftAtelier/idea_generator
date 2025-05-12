@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coupon Idea Generator</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fff9f6;
+      text-align: center;
+      padding: 50px;
+      color: #4B3F3F;
+    }
+    select, button {
+      font-size: 1em;
+      padding: 10px 15px;
+      margin: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    #idea {
+      margin-top: 30px;
+      font-size: 1.5em;
+      font-style: italic;
+      background-color: #fceeee;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 10px #eed2cc;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎁 Coupon Idea Generator</h1>
+  <p>Choose a theme and get a printable idea:</p>
+  <select id="category">
+    <option value="mom">For Mom</option>
+    <option value="partner">For Partner</option>
+    <option value="funny">Funny</option>
+    <option value="romantic">Romantic</option>
+  </select>
+  <button onclick="generateIdea()">Get Idea</button>
+  <div id="idea"></div>
+  <script>
+    const ideas = {
+      mom: [
+        "Breakfast in bed with a handwritten note",
+        "Help with the dishes — no reminder needed",
+        "A tech-free hour together",
+        "One relaxing tea break served with love"
+      ],
+      partner: [
+        "20-minute massage with candles",
+        "You choose the movie tonight (no veto!)",
+        "I'll handle dinner — your choice",
+        "One romantic walk with no phones"
+      ],
+      funny: [
+        "One ridiculous joke on command",
+        "Dramatic reading of any text you send",
+        "Silly selfie session",
+        "Speak in pirate voice for 10 minutes"
+      ],
+      romantic: [
+        "One slow dance in the kitchen",
+        "Handwritten love letter delivery",
+        "Sunset walk together",
+        "I'll plan our next date"
+      ]
+    };
+    function generateIdea() {
+      const cat = document.getElementById("category").value;
+      const pool = ideas[cat];
+      const idea = pool[Math.floor(Math.random() * pool.length)];
+      document.getElementById("idea").innerText = idea;
+    }
+  </script>
+</body>
+</html>
